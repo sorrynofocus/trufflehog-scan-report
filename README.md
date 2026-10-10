@@ -1,19 +1,10 @@
-# Utility Repo
-
-This is a collection of my utilities, notes, and workflows.
-
-Here's a list of utilties included in this repository:
+## TruffleHog Secret Scan Workflow
 
 - TruffleHog Secret Scan Workflow (this is located in `.github/workflows/trufflehog.yml`)
 
-Below are _README_ files for the included utilities.
-
----
----
-
-## TruffleHog Secret Scan Workflow
-
 This repository includes a GitHub Actions workflow for running TruffleHog against either one repository or every repository owned by a GitHub org/user. By default, the workflow is private-test friendly: it uploads the report as a workflow artifact and does not commit or publish reports unless explicitly enabled.
+
+> Note: Leaving unmodified workflows will be disabled by Github Actions
 
 ![TruffleHog secret scan report example](img/trufflehog-report-ex.jpeg)
 
