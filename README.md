@@ -2,7 +2,10 @@
 
 - TruffleHog Secret Scan Workflow (this is located in `.github/workflows/trufflehog.yml`)
 
-This repository includes a GitHub Actions workflow for running TruffleHog against either one repository or every repository owned by a GitHub org/user. By default, the workflow is private-test friendly: it uploads the report as a workflow artifact and does not commit or publish reports unless explicitly enabled.
+**Trufflehog?**
+TruffleHog is the most powerful secrets Discovery, Classification, Validation, and Analysis tool. It happily scans your repository. _This_ repository includes a GitHub Actions workflow for running [TruffleHog](https://github.com/trufflesecurity/trufflehog) against either one repository or every repository owned by a GitHub org/user. By default, the workflow is private-test friendly: it uploads the report as a workflow artifact and does not commit or publish reports unless explicitly enabled.
+
+Trufflehog-scan-report is an _unofficial_ tool and affiliated with TruffleHog. 
 
 > Note: Leaving unmodified workflows will be disabled by Github Actions
 
