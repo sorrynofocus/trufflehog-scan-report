@@ -15,7 +15,7 @@ function ensurePagesHome(config) {
 
   const relativeIndex = path.relative(docsDir, config.scansMarkdownPath).replace(/\\/g, '/');
   const markdown = [
-    '# Utility Reports',
+    '# Trufflehog Scan Report Reports',
     '',
     '- [TruffleHog Scan Reports](' + relativeIndex + ')',
     '',

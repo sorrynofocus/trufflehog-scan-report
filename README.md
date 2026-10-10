@@ -40,7 +40,7 @@ The workflow is designed to run with minimal committed configuration. Most runti
 | Raw scan output | Generated runtime files under `reports/` | Contains merged NDJSON, detector summary, per-repository NDJSON, and `reports/index.html`. Do not commit unless intentionally publishing reports. |
 | Pages report files | `docs/scans/trufflehog/*.html` | Dated HTML reports copied from `reports/index.html` when report publishing is enabled. These are the actual report pages linked from the Pages index. |
 | Pages report index | `docs/scans/trufflehog.md` | Markdown index regenerated newest-to-oldest when report publishing is enabled. This links to the dated HTML reports under `docs/scans/trufflehog/`. |
-| Pages home | `docs/index.md` | Project Pages landing page. The report generator creates a minimal one only if it does not already exist, so custom utility repo documentation is not overwritten. |
+| Pages home | `docs/index.md` | Project Pages landing page. The report generator creates a minimal one only if it does not already exist. |
 
 Fallback manager map format:
 
@@ -99,7 +99,7 @@ If `docs/scans/trufflehog.md` exists but a dated report link returns `404`, veri
 | Parameter | Default | Description |
 | --- | --- | --- |
 | Scan mode (`scan_target_type`) | `repository` | Choose whether to scan one repository or every non-archived repository under an owner/org. |
-| Scan target (`scan_target`) | `sorrynofocus/utility` | For repository mode, enter `owner/repo`. For org mode, enter only the owner/org name. |
+| Scan target (`scan_target`) | `sorrynofocus/trufflehog-scan-report` | For repository mode, enter `owner/repo`. For org mode, enter only the owner/org name. |
 | Repository visibility (`repository_visibility`) | `private` | Only used for org scans. Choose `private`, `public`, or `all`. |
 | Scan profile (`scan_profile`) | `strict` | Controls whether TruffleHog reports only verified findings or includes likely/noisy findings. |
 | Repository scan limit (`repository_scan_limit`) | `50000` | Only used for org scans. Limits how many repositories are listed and scanned. |
@@ -129,7 +129,7 @@ Single repository test:
 | Parameter | Value |
 | --- | --- |
 | Scan mode (`scan_target_type`) | `repository` |
-| Scan target (`scan_target`) | `sorrynofocus/utility` |
+| Scan target (`scan_target`) | `sorrynofocus/trufflehog-scan-report` |
 | Repository visibility (`repository_visibility`) | `private` |
 | Scan profile (`scan_profile`) | `strict` |
 | Upload report artifact (`upload_artifact`) | `true` |
@@ -215,7 +215,7 @@ _Note_: Typical Github pages cannot be _private_ unless you upgrade Github or en
 
     ```yaml
     environment:
-      name: utility-pages
+      name: trufflehog-scan-report-pages
       url: ${{ steps.deployment.outputs.page_url }}
     ```
 
@@ -225,7 +225,7 @@ _Note_: Typical Github pages cannot be _private_ unless you upgrade Github or en
 
 ```mermaid
 flowchart TD
-    A[Manual or scheduled workflow run] --> B[Checkout utility repository]
+    A[Manual or scheduled workflow run] --> B[Checkout trufflehog-scan-report repository]
     B --> C[Verify gh, jq, node, and GitHub auth]
     C --> D{Target type}
     D -->|repository| E[Validate owner/repo and write repos.txt]

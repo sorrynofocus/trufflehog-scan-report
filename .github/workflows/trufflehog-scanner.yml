@@ -14,7 +14,7 @@ on:
       scan_target:
         description: "Target to scan. Use an org name when mode is org; use owner/repo when mode is repository."
         required: false
-        default: "sorrynofocus/utility"
+        default: "sorrynofocus/trufflehog-scan-report"
       repository_visibility:
         description: "Only used for org scans. Choose all to include public and private repositories."
         type: choice

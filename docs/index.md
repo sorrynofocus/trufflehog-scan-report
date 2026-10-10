@@ -1,4 +1,4 @@
-# Utility
+# trufflehog-scan-report
 
 ## Reports
 
